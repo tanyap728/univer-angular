@@ -1,0 +1,21 @@
+
+<!--<span> Subject</span><span>{{}}</span>-->
+<span> Theme</span>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Enter theme" #theme>
+  </mat-form-field>
+</form>
+
+<span> Class</span> <span>{{className}}</span>
+<span> Subjet</span> <span>{{subject}}</span>
+
+<mat-form-field>
+  <input matInput [matDatepicker]="picker"
+         placeholder="Choose a date"
+         (dateInput)="setDateLesson($event)">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<button mat-button
+        (click)="addLesson(theme.value)">Add</button><button mat-button (click)="onNoClick()">Cancel</button>

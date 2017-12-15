@@ -1,0 +1,40 @@
+
+table
+{
+  /*border-collapse: collapse;*/
+  /*border-spacing: 0px;*/
+}
+.inputMark{
+  width: 10px;
+}
+.icAdd{
+  position: static;
+}
+table{
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+
+}
+th, td
+{
+  min-width: 3%;
+  min-height: 1%;
+  border: 1px solid rgba(0,0,0,.12);
+  border-spacing: 0;
+  border-collapse: separate;
+
+}
+.mark{
+  padding: 3%;
+  min-width:10px;
+  min-height:10px;
+}
+.warnAddSubjet {
+  margin-left: 40%;
+  text-align: center;
+  font-size: 30px;
+}
+.infoClass{
+  margin-top: 3%;
+}

@@ -1,0 +1,37 @@
+.panel-class{
+  width: 20vh;
+}
+.item-class{
+ text-align: center;
+}
+.mainPanel{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+
+}
+.panel-class {
+  height: 87vh;
+  margin-right: 10px;
+  background-color: rgba(10, 10, 10, .04);
+}
+.panelInfo {
+  height: 87vh;
+  width: 100%;
+}
+.dropDownSubject{
+  float: right;
+  display: flex;
+  flex-direction: row;
+}
+.warnAddSubjet{
+  margin-left: 40%;
+  text-align: center;
+  font-size: 30px;
+}
+.buttonLesson {
+  font-size: 90%;
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+}
