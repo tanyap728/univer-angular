@@ -21,12 +21,15 @@ import {AddLesson} from "./add.lesson/add.lesson";
 import {MatMenuModule} from '@angular/material';
 import {SubjectClassService} from "./service/subject.class.service";
 import {MatDatepickerModule} from '@angular/material';
+import {LoginComponent} from "./login/login.component";
+import {UserService} from "./service/user.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     PanelClassComponent,
     ItemClassComponent,
+    LoginComponent,
     AddLesson
   ],
   imports: [
@@ -52,6 +55,7 @@ import {MatDatepickerModule} from '@angular/material';
     SubjectClassService,
     LessonServise,
     ClassService,
+    UserService,
     ItemClassesService],
   bootstrap: [AppComponent],
   entryComponents: [AddLesson]
