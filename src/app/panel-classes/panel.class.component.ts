@@ -3,6 +3,7 @@ import {ClassService} from "../service/class.service";
 import {MatDialog} from "@angular/material";
 import {AddLesson} from "../add.lesson/add.lesson";
 import {SubjectClassService} from "../service/subject.class.service";
+import {Class} from '../models/class.model';
 
 @Component({
   selector: 'app-panel-class',
@@ -14,12 +15,12 @@ export class PanelClassComponent {
   public addPanelClass: boolean;
   private itemClick: string;
   private subject: string;
-  public classes: Array<string>;
+  public classes: Array<Class>;
   constructor(private  classService: ClassService,
               private subjectClassService: SubjectClassService,
               public dialog: MatDialog) {
     this.addPanelClass = false;
-    this.classes = classService.getClassList();
+    this.classes = this.classService.getClassList();
   }
   classClick(itemClass: string) {
     this.itemClick = itemClass;

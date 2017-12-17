@@ -5,7 +5,8 @@ import {Subject} from "./subject.model";
 export class Class {
   private _students: Student[];
   private _subjects: Subject[];
-  constructor(private id: UUID, private name: string) {
+  constructor(private id: UUID,
+              private name: string) {
     this._subjects = [];
     this._students = [];
   }
