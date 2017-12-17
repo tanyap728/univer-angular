@@ -5,7 +5,7 @@ export class Lesson {
               private subject: string,
               private dateLesson: Date) {
   }
-  getTiket(): number {
+  getTicket(): number {
     return this.tiket;
   }
   getTheme(): string {

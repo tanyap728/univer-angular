@@ -9,20 +9,20 @@
     <td>{{student}}</td>
     <td *ngFor="let lesson of lessons  ">
       <div class="mark"
-           *ngIf="itemTableL !== lesson.getTiket() || itemTableS !== student"
-           (click)="clickByTable(lesson.getTiket(), student)">
-        {{getMark(student, lesson.getTiket())}}
+           *ngIf="itemTableL !== lesson.getTicket() || itemTableS !== student"
+           (click)="clickByTable(lesson.getTicket(), student)">
+        {{getMark(student, lesson.getTicket())}}
       </div>
-      <span *ngIf="itemTableL === lesson.getTiket() &&itemTableS === student">
+      <span *ngIf="itemTableL === lesson.getTicket() &&itemTableS === student">
          <!--<form class="example-form">-->
         <mat-form-field class="example-full-width" ngNoForm>
           <input matInput placeholder="Enter mark" #mark>
         </mat-form-field>
       <!--</form>-->
-        <button class="icAdd" mat-icon-button color="accent" (click)="saveMark(mark.value, student, lesson.getTiket())">
+        <button class="icAdd" mat-icon-button color="accent" (click)="saveMark(mark.value, student, lesson.getTicket())">
           <mat-icon aria-label="Example icon-button with a heart icon">done</mat-icon>
         </button>
-        <!--<span class="icAdd" (click)="saveMark(mark.value, student, lesson.getTiket())"><mat-icon>done</mat-icon></span>-->
+        <!--<span class="icAdd" (click)="saveMark(mark.value, student, lesson.getTicket())"><mat-icon>done</mat-icon></span>-->
         <button class="icAdd" mat-icon-button color="accent" (click)="clickByTable(-1, '') ">
           <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
         </button>
