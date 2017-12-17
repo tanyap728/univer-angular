@@ -6,7 +6,7 @@ import {AddLesson} from "./add.lesson/add.lesson";
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard/:login', component: AddLesson }
+  { path: 'dashboard/:username', component: AddLesson }
 ];
 
 @NgModule({

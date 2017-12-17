@@ -3,7 +3,7 @@ import {User} from "./user.model";
 
 @Injectable()
 export class UserService {
-  private authorizedUsers: User[];
+  private authorizedUsers: User[] = [];
 
   public constructor(){
     this.authorizedUsers.push(User.createUser('admin', 'admin', 'admin'));
