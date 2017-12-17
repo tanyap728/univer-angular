@@ -19,12 +19,10 @@ import {MatButtonModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material';
 import {AddLesson} from "./add.lesson/add.lesson";
 import {MatMenuModule} from '@angular/material';
-import {SubjectClassService} from "./service/subject.class.service";
 import {MatDatepickerModule} from '@angular/material';
 import {LoginComponent} from "./login/login.component";
 import {UserService} from "./service/user.service";
 import {AppRoutingModule} from "./app-routing.module";
-import {TestComponent} from "./testcomponent/test.component";
 import {SubjectPanelComponent} from './subject.panel/subject.panel.component';
 
 @NgModule({
@@ -35,7 +33,6 @@ import {SubjectPanelComponent} from './subject.panel/subject.panel.component';
     ItemClassComponent,
     LoginComponent,
     AddLesson,
-    TestComponent
   ],
   imports: [
     AppRoutingModule,
@@ -58,7 +55,6 @@ import {SubjectPanelComponent} from './subject.panel/subject.panel.component';
   providers: [
     MatDatepickerIntl,
     MarksForClassService,
-    SubjectClassService,
     LessonServise,
     ClassService,
     UserService,

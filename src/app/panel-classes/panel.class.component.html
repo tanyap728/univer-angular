@@ -1,13 +1,16 @@
 <div class="mainPanel">
+
   <mat-list class="panel-class">
-    <mat-card class="item-class" *ngFor="let cl of classes" (click)="classClick(cl)">
-      {{ cl }}
+    <mat-card class="item-class" *ngFor="let class of classes" (click)="classClick(class)">
+      <mat-card-title>   {{ class.getName() }}</mat-card-title>
     </mat-card>
+
     <mat-card class="item-class" (click)="openPanelClass()" *ngIf="!addPanelClass">
      <span>
        <mat-icon>add</mat-icon>
      </span>
     </mat-card>
+
     <mat-card class="add-class" *ngIf="addPanelClass">
       <mat-form-field ngNoForm>
         <input matInput placeholder="Input" #class>
@@ -16,45 +19,17 @@
       <span (click)="openPanelClass()"><mat-icon>clear</mat-icon></span>
     </mat-card>
   </mat-list>
+
   <div class="panelInfo">
-    <app-subject></app-subject>
+    <div *ngIf="!getClassClick()"> please, select class</div>
 
-    <!--<span class="warnAddSubjet" *ngIf="!getSubjectList().length">Please, add subject </span>-->
-    <!--<button mat-button [matMenuTriggerFor]="menu"-->
-            <!--class="dropDownSubject"-->
-            <!--color="primary"-->
-            <!--*ngIf="itemClick && getSubjectList().length"><b>Subject</b></button>-->
-    <!--<mat-menu #menu="matMenu">-->
-      <!--<button mat-menu-item *ngFor="let subject of getSubjectList()"-->
-              <!--(click)="setSubject(subject)">{{subject}}-->
-      <!--</button>-->
-    <!--</mat-menu>-->
-    <!--<button class="dropDownSubject" mat-icon-button color="primary"-->
-            <!--(click)="clickOpenPanelSubject()"-->
-            <!--*ngIf="openPanelSubject">-->
-      <!--<mat-icon [fontIcon]="50">add</mat-icon>-->
-    <!--</button>-->
-    <!--<span class="dropDownSubject"-->
-          <!--*ngIf="!openPanelSubject">-->
-      <!--<form class="example-form" ngNoForm>-->
-        <!--<mat-form-field class="example-full-width">-->
-          <!--<input matInput placeholder="Enter theme" #subject>-->
-        <!--</mat-form-field>-->
-      <!--</form>-->
-      <!--<button class="icAdd"-->
-              <!--mat-button-->
-              <!--(click)="addSubjectByClass(subject.value)">-->
-              <!--<mat-icon aria-label="Example icon-button with a heart icon">done</mat-icon>-->
-      <!--</button>-->
-      <!--<button class="icAdd"-->
-              <!--mat-button-->
-              <!--(click)="clickOpenPanelSubject()">-->
-        <!--<mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>-->
-      <!--</button>-->
-    <!--</span>-->
+    <app-subject *ngIf="getClassClick()"
+                 [currentClass]="getClassClick()"
+                 (selectSubject)="setSubject()"></app-subject>
 
 
-    <app-item-class [className]="getClassClick()" [subject]="getSubject()"></app-item-class>
+
+    <!--<app-item-class [className]="getClassClick()" [subject]="getSubject()"></app-item-class>-->
     <button mat-fab color="primary"
             (click)="openPopUp()"
             class="buttonLesson"

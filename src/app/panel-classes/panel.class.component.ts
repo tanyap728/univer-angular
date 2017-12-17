@@ -1,64 +1,54 @@
-import { Component } from '@angular/core';
+import {AfterContentChecked, Component} from '@angular/core';
 import {ClassService} from "../service/class.service";
 import {MatDialog} from "@angular/material";
 import {AddLesson} from "../add.lesson/add.lesson";
-import {SubjectClassService} from "../service/subject.class.service";
 import {Class} from '../models/class.model';
+import {UUID} from 'angular2-uuid';
+import {Subject} from '../models/subject.model';
 
 @Component({
   selector: 'app-panel-class',
   templateUrl: 'panel.class.component.html',
   styleUrls: ['panel.class.component.css']
 })
-export class PanelClassComponent {
-  public openPanelSubject: boolean = true;
+export class PanelClassComponent implements AfterContentChecked {
   public addPanelClass: boolean;
-  private itemClick: string;
-  private subject: string;
-  public classes: Array<Class>;
+  public itemClick: Class;
+  private subject: Subject;
+  public classes: Class[];
   constructor(private  classService: ClassService,
-              private subjectClassService: SubjectClassService,
               public dialog: MatDialog) {
     this.addPanelClass = false;
+  }
+  ngAfterContentChecked() {
     this.classes = this.classService.getClassList();
   }
-  classClick(itemClass: string) {
+
+  setSubject(subj: Subject) {
+    this.subject = subj;
+  }
+  classClick(itemClass: Class) {
     this.itemClick = itemClass;
   }
-  getClassClick() {
-    return this.itemClick;
+  getClassClick(): Class {
+    return this.itemClick ? this.itemClick : this.classes[0];
   }
-  getSubjectList(): string[] {
-    return this.subjectClassService.getSubjectsByClassName(this.getClassClick());
-  }
-  openPanelClass(){
+
+  openPanelClass() {
     this.addPanelClass = !this.addPanelClass;
   }
   addClass(className: string) {
-    this.classService.addClass(className);
+    this.classService.addClass(new Class(UUID.UUID, className, [], []));
     this.openPanelClass();
   }
-  clickOpenPanelSubject(): void {
-    this.openPanelSubject = !this.openPanelSubject;
-  }
-  addSubjectByClass(subject: string): void {
-    this.subjectClassService.addSubjectByClass(subject, this.getClassClick());
-    this.clickOpenPanelSubject();
-  }
 
-  setSubject(subject: string) {
-    this.subject = subject;
-  }
-  getSubject() {
-    let sub: string[] = this.getSubjectList();
-   return this.subject ? this.subject : sub[0];
-  }
+
   openPopUp(): void {
-    const dialogRef = this.dialog.open(AddLesson, {
+    this.dialog.open(AddLesson, {
       width: '250px',
       data: {
         className: this.getClassClick(),
-        subject: this.getSubject()
+        subject: this.subject
       }
     });
 
