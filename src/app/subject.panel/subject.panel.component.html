@@ -1,0 +1,43 @@
+
+
+<mat-card-title
+  *ngIf="currentSubject">
+  {{currentSubject.getName()}}{{currentClass.getName()}}
+</mat-card-title>
+<span class="warnAddSubjet"  *ngIf="!currentClass.getSubjects().length">Please, add subject </span>
+<button mat-button [matMenuTriggerFor]="menu"
+        class="dropDownSubject"
+        color="primary"
+        *ngIf="currentClass.getSubjects().length"
+        ><b>Subject</b></button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item *ngFor="let subject of currentClass.getSubjects()"
+          (click)="setSubject(subject)">{{subject.getName()}}
+  </button>
+</mat-menu>
+<button class="dropDownSubject" mat-icon-button color="primary"
+        (click)="clickOpenPanelSubject()"
+        *ngIf="openPanelSubject">
+  <mat-icon [fontIcon]="50">add</mat-icon>
+</button>
+
+<span class="dropDownSubject"
+      *ngIf="!openPanelSubject">
+      <form class="example-form" ngNoForm>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Enter theme" #subject>
+        </mat-form-field>
+      </form>
+
+      <button class="icAdd"
+              mat-button
+              (click)="addSubjectByClass(subject.value)">
+              <mat-icon aria-label="Example icon-button with a heart icon">done</mat-icon>
+      </button>
+      <button class="icAdd"
+              mat-button
+              (click)="clickOpenPanelSubject()">
+        <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+      </button>
+    </span>

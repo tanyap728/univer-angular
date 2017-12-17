@@ -3,7 +3,6 @@ import {AfterContentChecked, Component, Input, OnInit} from "@angular/core";
 import {ItemClassesService} from "../service/item.classes.service";
 import {LessonServise} from "../service/lesson.servise";
 import {MarksForClassService} from "../service/marks.for.class.service";
-import {SubjectClassService} from "../service/subject.class.service";
 
 @Component({
   selector: 'app-item-class',
