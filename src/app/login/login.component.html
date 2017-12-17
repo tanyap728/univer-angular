@@ -1,15 +1,15 @@
 <div class="outPopUp">
-  <form class="example-form" ngNoForm>
-    <mat-form-field class="example-full-width" ngNoForm>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" >
       <input matInput placeholder="Login" #login>
     </mat-form-field>
-    <mat-form-field class="example-full-width" #password ngNoForm>
-      <input matInput placeholder="Password" >
+    <mat-form-field class="example-full-width" >
+      <input matInput placeholder="Password" #password>
     </mat-form-field>
   </form>
   <button class="icAdd"
           mat-button
           (click)="isAuthorized(login.value, password.value)">
-    <mat-icon aria-label="Example icon-button with a heart icon">done</mat-icon>
+    <mat-icon aria-label="Example icon-button with a heart icon">Login</mat-icon>
   </button>
 </div>

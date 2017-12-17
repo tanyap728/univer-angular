@@ -2,9 +2,9 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class ClassService {
-  massClass = ['10A','11B' ];
+  massClass = ['10A', '11B' ];
 
-  getClassList(){
+  getClassList() {
    return Array.from(this.massClass);
   }
 

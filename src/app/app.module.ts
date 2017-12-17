@@ -23,6 +23,7 @@ import {SubjectClassService} from "./service/subject.class.service";
 import {MatDatepickerModule} from '@angular/material';
 import {LoginComponent} from "./login/login.component";
 import {UserService} from "./service/user.service";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {UserService} from "./service/user.service";
     AddLesson
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatListModule,
@@ -57,7 +59,7 @@ import {UserService} from "./service/user.service";
     ClassService,
     UserService,
     ItemClassesService],
-  bootstrap: [AppComponent],
-  entryComponents: [LoginComponent]
+  bootstrap: [AppComponent]
+  // entryComponents: [LoginComponent]
 })
 export class AppModule { }
