@@ -7,6 +7,8 @@ export class Class {
               private name: string,
               private _students: Student[],
               private _subjects: Subject[]) {
+    this._students = [];
+    this._subjects = [];
   }
   getStudents() {
     return Array.from(this._students);

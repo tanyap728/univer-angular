@@ -2,7 +2,7 @@
 
 <mat-card-title
   *ngIf="currentSubject">
-  {{currentSubject.getName()}}{{currentClass.getName()}}
+  {{currentSubject.getName()}}  {{currentClass.getName()}}
 </mat-card-title>
 <span class="warnAddSubjet"  *ngIf="!currentClass.getSubjects().length">Please, add subject </span>
 <button mat-button [matMenuTriggerFor]="menu"
