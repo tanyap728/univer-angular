@@ -15,7 +15,7 @@
       </div>
       <span *ngIf="itemTableL === lesson.getTiket() &&itemTableS === student">
          <!--<form class="example-form">-->
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="example-full-width" ngNoForm>
           <input matInput placeholder="Enter mark" #mark>
         </mat-form-field>
       <!--</form>-->
@@ -35,7 +35,7 @@
     Add Student
   </button>
   <span *ngIf="addStudent">
-      <form class="example-form">
+      <form class="example-form" ngNoForm>
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Enter student's name" #studentName>
         </mat-form-field>

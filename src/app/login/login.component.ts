@@ -16,8 +16,10 @@ export class LoginComponent {
   }
 
   public isAuthorized(login: string, password: string) {
-    if (this.userService.isAuthorized(login,password))
-   this.router.navigateByUrl(""); //TODO write url into router
+    if (this.userService.isAuthorized(login, password)) {
+      this.router.navigateByUrl('dashboard/' + this.login);
+    }
+
   }
 
 }

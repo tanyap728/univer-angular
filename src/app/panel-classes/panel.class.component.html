@@ -9,7 +9,7 @@
      </span>
     </mat-card>
     <mat-card class="add-class" *ngIf="addPanelClass">
-      <mat-form-field>
+      <mat-form-field ngNoForm>
         <input matInput placeholder="Input" #class>
       </mat-form-field>
       <span (click)="addClass(class.value)"><mat-icon>done</mat-icon></span>
@@ -35,7 +35,7 @@
     </button>
     <span class="dropDownSubject"
           *ngIf="!openPanelSubject">
-      <form class="example-form">
+      <form class="example-form" ngNoForm>
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Enter theme" #subject>
         </mat-form-field>

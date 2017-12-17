@@ -1,8 +1,8 @@
 
 <!--<span> Subject</span><span>{{}}</span>-->
 <span> Theme</span>
-<form class="example-form">
-  <mat-form-field class="example-full-width">
+<form class="example-form" ngNoForm>
+  <mat-form-field class="example-full-width" ngNoForm>
     <input matInput placeholder="Enter theme" #theme>
   </mat-form-field>
 </form>
@@ -10,7 +10,7 @@
 <span> Class</span> <span>{{className}}</span>
 <span> Subjet</span> <span>{{subject}}</span>
 
-<mat-form-field>
+<mat-form-field ngNoForm>
   <input matInput [matDatepicker]="picker"
          placeholder="Choose a date"
          (dateInput)="setDateLesson($event)">
