@@ -10,13 +10,19 @@ export class Class {
     this._subjects = [];
     this._students = [];
   }
-  get students(){
+  getStudents() {
     return Array.from(this._students);
   }
-  get subjects(){
+  getSubjects() {
     return Array.from(this._subjects);
   }
   public addStudent(student: Student) {
     this._students.push(student);
+  }
+  getName() {
+    return this.name;
+  }
+  getId() {
+    return this.id;
   }
 }
