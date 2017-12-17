@@ -1,14 +1,24 @@
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
+import {Class} from '../models/class.model';
+import {UUID} from 'angular2-uuid';
+import {Student} from '../models/student.model';
 
 @Injectable()
 export class ClassService {
-  massClass = ['10A', '11B' ];
-
-  getClassList() {
+  private massClass: Class[];
+  constructor() {
+    this.massClass = [];
+    const class1 = new Class(UUID.UUID(), '11-A');
+    const class2 = new Class(UUID.UUID(), '12-A');
+    class1.addStudent(new Student(UUID.UUID(), 'vasya'));
+    class1.addStudent(new Student(UUID.UUID(), 'petya'));
+    this.massClass.push(class1);
+    this.massClass.push(class2);
+  }
+  public getClassList() {
    return Array.from(this.massClass);
   }
-
-  addClass( className: string): void {
-    this.massClass.push(className);
-  }
+  // public addClass(class: Class ) {
+  //   this.massClass.push(class);
+  // }
 }
