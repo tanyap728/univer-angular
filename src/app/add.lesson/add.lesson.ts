@@ -17,7 +17,7 @@ export class AddLesson {
               @Inject(MAT_DIALOG_DATA) public data: any,
               private lessonServise: LessonServise) {
     this.subject = this.data.subject;
-    this.className= this.data.className;
+    this.className = this.data.className;
     console.log(this.data);
   }
 
