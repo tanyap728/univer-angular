@@ -3,7 +3,7 @@ export class MarksForStudent {
   constructor(private mark: number,
               private student: string,
               private lesson: number,
-              private subject:string) {
+              private subject: string) {
 
   }
   getMark(): number {

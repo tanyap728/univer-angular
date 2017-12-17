@@ -24,6 +24,7 @@ import {MatDatepickerModule} from '@angular/material';
 import {LoginComponent} from "./login/login.component";
 import {UserService} from "./service/user.service";
 import {AppRoutingModule} from "./app-routing.module";
+import {TestComponent} from "./testcomponent/test.component";
 import {SubjectPanelComponent} from './subject.panel/subject.panel.component';
 
 @NgModule({
@@ -33,7 +34,8 @@ import {SubjectPanelComponent} from './subject.panel/subject.panel.component';
     PanelClassComponent,
     ItemClassComponent,
     LoginComponent,
-    AddLesson
+    AddLesson,
+    TestComponent
   ],
   imports: [
     AppRoutingModule,

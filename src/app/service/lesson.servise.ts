@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Lesson} from "./lesson";
+import {Lesson} from "../models/lesson";
 
 @Injectable()
 export class LessonServise {
