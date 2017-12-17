@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {MatDialog} from '@angular/material';
-import {ClassService} from '../service/class.service';
+import {
+  Component, EventEmitter, Input, OnChanges,
+  Output
+} from '@angular/core';
 import {Class} from '../models/class.model';
 import {Subject} from '../models/subject.model';
 import {UUID} from 'angular2-uuid';
@@ -10,16 +11,18 @@ import {UUID} from 'angular2-uuid';
   templateUrl: 'subject.panel.component.html',
   styleUrls: ['subject.panel.component.css']
 })
-export class SubjectPanelComponent implements OnInit {
-  @Input()currentClass: Class;
+export class SubjectPanelComponent implements OnChanges {
+  @Input() currentClass: Class;
   @Output()selectSubject: EventEmitter<Subject> = new EventEmitter<Subject>();
   public openPanelSubject: boolean = true;
   public currentSubject: Subject;
 
-  ngOnInit() {
+  ngOnChanges() {
    if ( this.currentClass.getSubjects().length) {
      this.currentSubject = this.currentClass.getSubjects()[0];
      this.selectSubject.emit(this.currentClass.getSubjects()[0]);
+   } else {
+     this.currentSubject = null;
    }
   }
 
