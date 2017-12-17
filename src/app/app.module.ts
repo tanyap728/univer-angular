@@ -58,6 +58,6 @@ import {UserService} from "./service/user.service";
     UserService,
     ItemClassesService],
   bootstrap: [AppComponent],
-  entryComponents: [AddLesson]
+  entryComponents: [LoginComponent]
 })
 export class AppModule { }
