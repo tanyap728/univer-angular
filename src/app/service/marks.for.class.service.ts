@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {MarksForStudent} from "./marksForStudent";
+import {MarksForStudent} from "../models/marksForStudent";
 
 @Injectable()
 export class MarksForClassService {
