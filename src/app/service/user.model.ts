@@ -3,10 +3,10 @@ export class User {
   private login: string;
   private password: string;
   private name: string;
-  constructor(){
+  constructor() {
   }
 
-  public static createUser(name: string,login: string, password: string): User {
+  public static createUser(name: string, login: string, password: string): User {
     let user: User = new User();
     user.setLogin(login);
     user.setName(name);
@@ -33,7 +33,7 @@ export class User {
     return this.login;
   }
 
-  public setLogin(login:string) {
+  public setLogin(login: string) {
     this.login = login;
   }
 

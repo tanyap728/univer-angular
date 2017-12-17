@@ -17,9 +17,9 @@ export class PanelClassComponent {
   public classes: Array<string>;
   constructor(private  classService: ClassService,
               private subjectClassService: SubjectClassService,
-              public dialog: MatDialog){
+              public dialog: MatDialog) {
     this.addPanelClass = false;
-    this.classes = classService.massClass;
+    this.classes = classService.getClassList();
   }
   classClick(itemClass: string) {
     this.itemClick = itemClass;
@@ -53,7 +53,7 @@ export class PanelClassComponent {
    return this.subject ? this.subject : sub[0];
   }
   openPopUp(): void {
-    let dialogRef = this.dialog.open(AddLesson, {
+    const dialogRef = this.dialog.open(AddLesson, {
       width: '250px',
       data: {
         className: this.getClassClick(),
