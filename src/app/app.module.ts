@@ -24,10 +24,12 @@ import {MatDatepickerModule} from '@angular/material';
 import {LoginComponent} from "./login/login.component";
 import {UserService} from "./service/user.service";
 import {AppRoutingModule} from "./app-routing.module";
+import {SubjectPanelComponent} from './subject.panel/subject.panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SubjectPanelComponent,
     PanelClassComponent,
     ItemClassComponent,
     LoginComponent,
