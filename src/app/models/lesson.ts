@@ -1,17 +1,20 @@
+import {Subject} from "./subject.model";
+import {Class} from "./class.model";
+
 export class Lesson {
 
-  constructor(private tiket: number,
-              private theme: string,
-              private subject: string,
+  constructor(private ticket: number,
+              private topic: string,
+              private subject: Subject,
               private dateLesson: Date) {
   }
   getTicket(): number {
-    return this.tiket;
+    return this.ticket;
   }
-  getTheme(): string {
-   return this.theme;
+  getTopic(): string {
+   return this.topic;
   }
-  getSubject(): string {
+  getSubject(): Subject {
     return this.subject;
   }
   getDateLesson(): Date {

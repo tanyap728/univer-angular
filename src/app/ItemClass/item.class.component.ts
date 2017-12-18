@@ -3,6 +3,7 @@ import {AfterContentChecked, Component, Input, OnInit} from "@angular/core";
 import {ItemClassesService} from "../service/item.classes.service";
 import {LessonServise} from "../service/lesson.servise";
 import {MarksForClassService} from "../service/marks.for.class.service";
+import {Student} from "../models/student.model";
 
 @Component({
   selector: 'app-item-class',
@@ -16,18 +17,19 @@ export class ItemClassComponent implements AfterContentChecked {
   @Input() className: string;
   @Input() subject: string;
 
-  students : string[];
+  students: Student[];
   lessons = [];
   constructor(private itemClassesService: ItemClassesService,
               private lessonServise: LessonServise,
               private marksForClassService: MarksForClassService) {
   }
   ngAfterContentChecked() {
-    this.students = this.itemClassesService.getStudentsByClassName(this.className);
-    this.lessons = this.lessonServise.getStudentsByClassName(this.className, this.subject);
+    // TODO make this right
+    // this.students = this.itemClassesService.getStudentsByClassName(this.className);
+    // this.lessons = this.lessonServise.getStudentsByClassName(this.className, this.subject);
   }
   getMark(student: string, lesson: number): number {
-   return this.marksForClassService.getMarkByStudent(student, lesson, this.subject);
+   return this.marksForClassService.getMark(student, lesson, this.subject);
   }
   clickByTable(lesson, student) {
     console.log(lesson, student);
