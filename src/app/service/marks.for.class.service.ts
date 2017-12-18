@@ -18,7 +18,7 @@ export class MarksForClassService {
     return res ? res : null;
   }
 
-  markSave(mark: number, studentId: string, lessonId: string, subjectId: UUID) {
+  markSave(mark: number, studentId: string, lessonId: string, subjectId: string) {
     console.log(mark);
     let markForStud = new MarksForStudent(UUID.UUID(), mark, studentId , this.lessonService.getLessonById(lessonId), subjectId);
      this.studentsMarks.push(markForStud);

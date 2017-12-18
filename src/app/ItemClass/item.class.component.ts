@@ -1,6 +1,5 @@
 
 import {AfterContentChecked, Component, Input, OnInit} from "@angular/core";
-import {ItemClassesService} from "../service/item.classes.service";
 import {LessonServise} from "../service/lesson.servise";
 import {MarksForClassService} from "../service/marks.for.class.service";
 import {Subject} from '../models/subject.model';
@@ -27,7 +26,9 @@ export class ItemClassComponent implements OnInit {
   ngOnInit() {
     console.log(this.classCurrent);
     console.log(this.subject);
-    // this.lessons = this.lessonServise.getStudentsByClassName(this.className, this.subject);
+    this.lessons = this.lessonServise.getLessonByClassAndSubject(
+      this.classCurrent.getId(),
+      this.subject.getId());
   }
   getMark(student: string, lesson: number): number {
    return 6; //this.marksForClassService.getMarkByStudent(student, lesson, this.subject);

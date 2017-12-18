@@ -49,14 +49,13 @@ export class PanelClassComponent implements AfterContentChecked {
 
 
   openPopUp(): void {
-    this.dialog.open(AddLesson, {
+    let dialogRef = this.dialog.open(AddLesson, {
       width: '250px',
       data: {
-        className: this.getClassClick(),
+        classCurrent: this.getClassClick(),
         subject: this.subject
       }
     });
-
     // dialogRef.afterClosed().subscribe(result => {
     // });
   }

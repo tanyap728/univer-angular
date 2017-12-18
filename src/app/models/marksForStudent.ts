@@ -24,7 +24,7 @@ export class MarksForStudent {
   getLesson(): Lesson {
     return this.lesson;
   }
-  getSubject(): Subject {
+  getSubject(): string {
     return this.subjectId;
   }
 }
