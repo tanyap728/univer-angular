@@ -18,12 +18,12 @@ export class SubjectPanelComponent implements OnChanges {
   public currentSubject: Subject;
 
   ngOnChanges() {
-   if ( this.currentClass.getSubjects().length) {
-     this.currentSubject = this.currentClass.getSubjects()[0];
-     this.selectSubject.emit(this.currentClass.getSubjects()[0]);
-   } else {
-     this.currentSubject = null;
-   }
+   // if ( this.currentClass.getSubjects().length) {
+   //   this.currentSubject = this.currentClass.getSubjects()[0];
+   //   this.selectSubject.emit(this.currentClass.getSubjects()[0]);
+   // } else {
+   //   this.currentSubject = null;
+   // }
   }
 
   clickOpenPanelSubject(): void {
@@ -33,8 +33,8 @@ export class SubjectPanelComponent implements OnChanges {
     let sub = new Subject(UUID.UUID, subjectName);
     this.currentClass.addSubject(sub);
     this.currentSubject = sub;
-    this.selectSubject.emit(sub);
     this.clickOpenPanelSubject();
+    this.selectSubject.emit(sub);
   }
 
   setSubject(subject: Subject) {

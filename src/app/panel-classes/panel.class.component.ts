@@ -25,15 +25,20 @@ export class PanelClassComponent implements AfterContentChecked {
   }
 
   setSubject(subj: Subject) {
+
     this.subject = subj;
   }
   classClick(itemClass: Class) {
     this.itemClick = itemClass;
   }
   getClassClick(): Class {
+    console.log(this.itemClick ? this.itemClick : this.classes[0]);
     return this.itemClick ? this.itemClick : this.classes[0];
   }
-
+  getSubject() {
+    console.log(this.subject);
+    return this.subject;
+  }
   openPanelClass() {
     this.addPanelClass = !this.addPanelClass;
   }
