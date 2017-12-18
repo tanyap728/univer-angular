@@ -25,11 +25,14 @@
 
     <app-subject *ngIf="getClassClick()"
                  [currentClass]="getClassClick()"
-                 (selectSubject)="setSubject()"></app-subject>
+                 (selectSubject)="setSubject($event)"></app-subject>
 
 
+    <app-item-class *ngIf="getClassClick() && getSubject()"
+                    [classCurrent]="getClassClick()"
+                    [subject]="getSubject()">
 
-    <!--<app-item-class [className]="getClassClick()" [subject]="getSubject()"></app-item-class>-->
+    </app-item-class>
     <button mat-fab color="primary"
             (click)="openPopUp()"
             class="buttonLesson"
