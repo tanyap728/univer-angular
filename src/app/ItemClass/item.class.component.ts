@@ -1,6 +1,5 @@
 
 import {AfterContentChecked, Component, Input, OnInit} from "@angular/core";
-import {ItemClassesService} from "../service/item.classes.service";
 import {LessonServise} from "../service/lesson.servise";
 import {MarksForClassService} from "../service/marks.for.class.service";
 import {Student} from "../models/student.model";
@@ -19,8 +18,7 @@ export class ItemClassComponent implements AfterContentChecked {
 
   students: Student[];
   lessons = [];
-  constructor(private itemClassesService: ItemClassesService,
-              private lessonServise: LessonServise,
+  constructor(private lessonServise: LessonServise,
               private marksForClassService: MarksForClassService) {
   }
   ngAfterContentChecked() {

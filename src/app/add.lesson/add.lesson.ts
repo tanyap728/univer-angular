@@ -30,7 +30,7 @@ export class AddLesson {
   }
   addLesson(theme: string) {
     console.log(new Date(this.dateLesson));
-    this.lessonServise.addLessonByClass(theme, this.subject, this.dateLesson, this.className);
+    // this.lessonServise.addLessonByClass(theme, this.subject, this.dateLesson, this.className);
     this.onNoClick();
   }
 }

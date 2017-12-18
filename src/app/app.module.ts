@@ -8,7 +8,6 @@ import {MatIconModule} from '@angular/material';
 import {MatCardModule} from '@angular/material';
 import {ClassService} from "./service/class.service";
 import {ItemClassComponent} from "./ItemClass/item.class.component";
-import {ItemClassesService} from "./service/item.classes.service";
 import {MatFormFieldModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -57,8 +56,7 @@ import {SubjectPanelComponent} from './subject.panel/subject.panel.component';
     MarksForClassService,
     LessonServise,
     ClassService,
-    UserService,
-    ItemClassesService],
+    UserService],
   bootstrap: [AppComponent]
   // entryComponents: [LoginComponent]
 })

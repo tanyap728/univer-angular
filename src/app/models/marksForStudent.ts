@@ -5,11 +5,11 @@ import {Lesson} from "./lesson";
 
 export class MarksForStudent {
 
-  constructor(private id: UUID,
+  constructor(private id: string,
               private mark: number,
-              private student: UUID,
+              private studentId: string,
               private lesson: Lesson,
-              private subject: UUID) {
+              private subjectId: string) {
 
   }
   getId() {
@@ -18,13 +18,13 @@ export class MarksForStudent {
   getMark(): number {
     return this.mark;
   }
-  getStudent() {
-    return this.student;
+  getStudentId() {
+    return this.studentId;
   }
   getLesson(): Lesson {
     return this.lesson;
   }
   getSubject(): Subject {
-    return this.subject;
+    return this.subjectId;
   }
 }

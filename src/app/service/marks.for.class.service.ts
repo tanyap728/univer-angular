@@ -11,16 +11,16 @@ export class MarksForClassService {
     this.studentsMarks.push();
   }
   // TODO rewrite this
-  getMark(studentId: UUID, lessonId: Lesson) {
+  getMark(studentId: string, lessonId: Lesson) {
     let res =  this.studentsMarks
-      .filter(studentMark => studentMark.getStudent() === studentId)
+      .filter(studentMark => studentMark.getStudentId() === studentId)
       .filter(studentMark => studentMark.getLesson().getId() === lessonId);
     return res ? res : null;
   }
 
-  markSave(mark: number, studentId: UUID, lessonId: UUID, subjectId: UUID) {
+  markSave(mark: number, studentId: string, lessonId: string, subjectId: UUID) {
     console.log(mark);
-    let markForStud = new MarksForStudent(UUID.UUID(), mark, studentId , this.lessonService.getLessonById(lessonId), subjectId)
+    let markForStud = new MarksForStudent(UUID.UUID(), mark, studentId , this.lessonService.getLessonById(lessonId), subjectId);
      this.studentsMarks.push(markForStud);
   }
 
