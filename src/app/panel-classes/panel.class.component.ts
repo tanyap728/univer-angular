@@ -43,7 +43,7 @@ export class PanelClassComponent implements AfterContentChecked {
     this.addPanelClass = !this.addPanelClass;
   }
   addClass(className: string) {
-    this.classService.addClass(new Class(UUID.UUID, className, [], []));
+    this.classService.addClass(new Class(UUID.UUID(), className, [], []));
     this.openPanelClass();
   }
 

@@ -21,8 +21,7 @@ export class ItemClassComponent implements OnInit {
   @Input() subject: Subject;
 
   lessons = [];
-  constructor(private itemClassesService: ItemClassesService,
-              private lessonServise: LessonServise,
+  constructor(private lessonServise: LessonServise,
               private marksForClassService: MarksForClassService) {
   }
   ngOnInit() {
