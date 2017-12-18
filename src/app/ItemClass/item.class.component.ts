@@ -1,48 +1,45 @@
 
 import {AfterContentChecked, Component, Input, OnInit} from "@angular/core";
-import {ItemClassesService} from "../service/item.classes.service";
 import {LessonServise} from "../service/lesson.servise";
 import {MarksForClassService} from "../service/marks.for.class.service";
 import {Subject} from '../models/subject.model';
 import {Class} from '../models/class.model';
 import {UUID} from 'angular2-uuid';
 import {Student} from '../models/student.model';
+import {Lesson} from "../models/lesson";
 
 @Component({
   selector: 'app-item-class',
   templateUrl: 'item.class.component.html',
   styleUrls: ['item.class.component.css']
 })
-export class ItemClassComponent implements OnInit {
+export class ItemClassComponent implements AfterContentChecked {
   addStudent: boolean = false;
-  itemTableL: number = 0;
+  itemTableL: string = '';
   itemTableS: string = '';
   @Input() classCurrent: Class;
   @Input() subject: Subject;
 
-  students : string[];
-  lessons = [];
-  constructor(private itemClassesService: ItemClassesService,
-              private lessonServise: LessonServise,
+  lessons: Lesson[] = [];
+  constructor(private lessonServise: LessonServise,
               private marksForClassService: MarksForClassService) {
   }
-  ngOnInit() {
-    console.log(this.classCurrent);
-    console.log(this.subject);
-    // this.lessons = this.lessonServise.getStudentsByClassName(this.className, this.subject);
+  ngAfterContentChecked() {
+    this.lessons = this.lessonServise.getLessonByClassAndSubject(
+      this.classCurrent.getId(),
+      this.subject.getId());
   }
-  getMark(student: string, lesson: number): number {
-   return 6; //this.marksForClassService.getMarkByStudent(student, lesson, this.subject);
+  getMark(studentId: string, lessonId: string): number {
+   return this.marksForClassService.getMark(studentId, lessonId);
   }
   clickByTable(lesson, student) {
-    console.log(lesson, student);
     this.itemTableL = lesson;
     this.itemTableS = student;
   }
 
-  saveMark(mark, student, lesson) {
-    // this.clickByTable(0,'');
-    // this.marksForClassService.markSave(mark, student, lesson, this.subject);
+  saveMark(mark, studentId, lessonId) {
+     this.clickByTable('','');
+     this.marksForClassService.markSave(mark, studentId, lessonId, this.subject.getId());
   }
   clickByAddstydent() {
     this.addStudent = !this.addStudent;

@@ -19,15 +19,11 @@
   height: 87vh;
   width: 100%;
 }
-.dropDownSubject{
-  float: right;
-  display: flex;
-  flex-direction: row;
-}
+
 .warnAddSubjet{
   margin-left: 40%;
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
 }
 .buttonLesson {
   font-size: 90%;

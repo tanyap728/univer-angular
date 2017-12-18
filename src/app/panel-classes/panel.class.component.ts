@@ -43,20 +43,19 @@ export class PanelClassComponent implements AfterContentChecked {
     this.addPanelClass = !this.addPanelClass;
   }
   addClass(className: string) {
-    this.classService.addClass(new Class(UUID.UUID, className, [], []));
+    this.classService.addClass(new Class(UUID.UUID(), className, [], []));
     this.openPanelClass();
   }
 
 
   openPopUp(): void {
-    this.dialog.open(AddLesson, {
+    let dialogRef = this.dialog.open(AddLesson, {
       width: '250px',
       data: {
-        className: this.getClassClick(),
+        classCurrent: this.getClassClick(),
         subject: this.subject
       }
     });
-
     // dialogRef.afterClosed().subscribe(result => {
     // });
   }

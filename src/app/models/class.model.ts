@@ -3,18 +3,20 @@ import {Student} from "./student.model";
 import {Subject} from "./subject.model";
 
 export class Class {
-  private _students: Student[];
-  private _subjects: Subject[]
-  constructor(private id: UUID,
-              private name: string) {
+
+  constructor(private id: string,
+              private name: string,
+              private _students: Student[],
+              private _subjects: Subject[]
+  ) {
     this._students = [];
     this._subjects = [];
   }
   getStudents() {
-    return Array.from(this._students);
+    return this._students;
   }
   getSubjects() {
-    return Array.from(this._subjects);
+    return this._subjects;
   }
   public addStudent(student: Student) {
     this._students.push(student);
