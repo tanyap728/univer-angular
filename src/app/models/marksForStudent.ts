@@ -8,8 +8,7 @@ export class MarksForStudent {
   constructor(private id: string,
               private mark: number,
               private studentId: string,
-              private lesson: Lesson,
-              private subjectId: string) {
+              private lessonId: string) {
 
   }
   getId() {
@@ -21,10 +20,8 @@ export class MarksForStudent {
   getStudentId() {
     return this.studentId;
   }
-  getLesson(): Lesson {
-    return this.lesson;
+  getLessonId(): string {
+    return this.lessonId;
   }
-  getSubject(): string {
-    return this.subjectId;
-  }
+
 }

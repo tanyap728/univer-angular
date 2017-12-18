@@ -11,17 +11,17 @@
     <td>{{student.getName()}}</td>
     <td *ngFor="let lesson of lessons  ">
       <div class="mark"
-           *ngIf="itemTableL !== lesson.getTicket() || itemTableS !== student"
-           (click)="clickByTable(lesson.getTicket(), student)">
-        {{getMark(student, lesson.getTicket())}}
+           *ngIf="itemTableL !== lesson.getId() || itemTableS !== student.getId()"
+           (click)="clickByTable(lesson.getId(), student.getId())">
+        {{getMark(student.getId(), lesson.getId()) !== -1 ? getMark(student.getId(), lesson.getId()) : ''}}
       </div>
-      <span *ngIf="itemTableL === lesson.getTicket() &&itemTableS === student">
+      <span *ngIf="itemTableL === lesson.getId() && itemTableS === student.getId()">
 
         <mat-form-field class="example-full-width" ngNoForm>
           <input matInput placeholder="Enter mark" #mark>
         </mat-form-field>
 
-        <button class="icAdd" mat-icon-button color="accent" (click)="saveMark(mark.value, student, lesson.getTicket())">
+        <button class="icAdd" mat-icon-button color="accent" (click)="saveMark(mark.value, student, lesson.getId())">
           <mat-icon aria-label="Example icon-button with a heart icon">done</mat-icon>
         </button>
         <!--<span class="icAdd" (click)="saveMark(mark.value, student, lesson.getTicket())"><mat-icon>done</mat-icon></span>-->

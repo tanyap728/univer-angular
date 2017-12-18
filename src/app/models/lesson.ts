@@ -5,22 +5,23 @@ import {UUID} from "angular2-uuid";
 export class Lesson {
 
   constructor(private id: UUID,
-              private ticket: number,
               private topic: string,
               private subject: Subject,
-              private dateLesson: Date) {
+              private dateLesson: Date,
+              private currentClass: Class) {
   }
-  getId(){
+  getId() {
     return this.id;
   }
-  getTicket(): number {
-    return this.ticket;
-  }
+
   getTopic(): string {
    return this.topic;
   }
   getSubject(): Subject {
     return this.subject;
+  }
+  getClass() {
+    return this.currentClass;
   }
   getDateLesson(): Date {
     return this.dateLesson;

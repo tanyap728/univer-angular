@@ -32,13 +32,8 @@ export class AddLesson {
     console.log(new Date(date.value));
     this.dateLesson = new Date(date.value);
   }
-  addLesson(theme: string) {
-    this.lessonServise.addLessonByClass( this.classCurrent.getId(),
-      new Lesson( UUID.UUID(),
-      2,
-        theme,
-     this.subject,
-      new Date()));
+  addLesson(topic: string) {// classCurrent: Class,  topic: string, subject: Subject, dateCurrent: Date
+    this.lessonServise.addLessonByClass(this.classCurrent, topic, this.subject, new Date());
     this.onNoClick();
   }
 }
