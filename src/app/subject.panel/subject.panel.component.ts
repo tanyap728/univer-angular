@@ -30,7 +30,7 @@ export class SubjectPanelComponent implements OnChanges {
     this.openPanelSubject = !this.openPanelSubject;
   }
   addSubjectByClass(subjectName: string): void {
-    let sub = new Subject(UUID.UUID, subjectName);
+    let sub = new Subject(UUID.UUID(), subjectName);
     this.currentClass.addSubject(sub);
     this.currentSubject = sub;
     this.clickOpenPanelSubject();

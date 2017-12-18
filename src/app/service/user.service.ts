@@ -5,7 +5,7 @@ import {User} from "../models/user.model";
 export class UserService {
   private authorizedUsers: User[] = [];
 
-  public constructor(){
+  public constructor() {
     this.authorizedUsers.push(User.createUser('admin', 'admin', 'admin'));
   }
 
