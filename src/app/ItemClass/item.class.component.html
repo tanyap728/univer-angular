@@ -1,12 +1,14 @@
-<span class="warnAddSubjet">{{subject}}</span>
+
+<span class="warnAddSubjet">{{classCurrent.getName()}}</span>
 <table class="infoClass">
 
-  <tr *ngIf="students">
+  <tr *ngIf="classCurrent">
     <td>Students</td>
     <td *ngFor="let lesson of lessons">{{lesson.getDateLesson()|date }}</td>
   </tr>
-  <tr *ngFor="let student of students">
-    <td>{{student}}</td>
+
+  <tr *ngFor="let student of classCurrent.getStudents()">
+    <td>{{student.getName()}}</td>
     <td *ngFor="let lesson of lessons  ">
       <div class="mark"
            *ngIf="itemTableL !== lesson.getTicket() || itemTableS !== student"
@@ -14,11 +16,11 @@
         {{getMark(student, lesson.getTicket())}}
       </div>
       <span *ngIf="itemTableL === lesson.getTicket() &&itemTableS === student">
-         <!--<form class="example-form">-->
+
         <mat-form-field class="example-full-width" ngNoForm>
           <input matInput placeholder="Enter mark" #mark>
         </mat-form-field>
-      <!--</form>-->
+
         <button class="icAdd" mat-icon-button color="accent" (click)="saveMark(mark.value, student, lesson.getTicket())">
           <mat-icon aria-label="Example icon-button with a heart icon">done</mat-icon>
         </button>
