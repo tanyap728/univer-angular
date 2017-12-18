@@ -28,9 +28,9 @@ export class ItemClassComponent implements AfterContentChecked {
     // this.students = this.itemClassesService.getStudentsByClassName(this.className);
     // this.lessons = this.lessonServise.getStudentsByClassName(this.className, this.subject);
   }
-  getMark(student: string, lesson: number): number {
-   return this.marksForClassService.getMark(student, lesson, this.subject);
-  }
+  // getMark(student: string, lesson: number): number {
+  //  // return this.marksForClassService.getMark(student, lesson, this.subject);
+  // }
   clickByTable(lesson, student) {
     console.log(lesson, student);
     this.itemTableL = lesson;
@@ -38,7 +38,7 @@ export class ItemClassComponent implements AfterContentChecked {
   }
 
   saveMark(mark, student, lesson) {
-    this.clickByTable(0,'');
+    // this.clickByTable(0,'');
     this.marksForClassService.markSave(mark, student, lesson, this.subject);
   }
   clickByAddstydent() {

@@ -7,9 +7,9 @@ export class MarksForStudent {
 
   constructor(private id: UUID,
               private mark: number,
-              private student: Student,
+              private student: UUID,
               private lesson: Lesson,
-              private subject: Subject) {
+              private subject: UUID) {
 
   }
   getId() {
@@ -18,7 +18,7 @@ export class MarksForStudent {
   getMark(): number {
     return this.mark;
   }
-  getStudent(): Student {
+  getStudent() {
     return this.student;
   }
   getLesson(): Lesson {
