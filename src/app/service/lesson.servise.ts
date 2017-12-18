@@ -10,8 +10,8 @@ export class LessonServise {
   private lessons: Lesson[] = [];
   constructor(private classService: ClassService) {
 
-    const theClass: Class = this.classService.getClassList()[0];
-    this.lessons.push(new Lesson(UUID.UUID(), 'dg', theClass.getSubjects()[0] , new Date(1995, 11, 17), theClass));
+    // const theClass: Class = this.classService.getClassList()[0];
+    // this.lessons.push(new Lesson(UUID.UUID(), 'dg', theClass.getSubjects()[0] , new Date(1995, 11, 17), theClass));
 
   }
   getLessonByClassAndSubject(theClassId: string, subjectId: string): Lesson[] {

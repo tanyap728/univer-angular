@@ -37,9 +37,9 @@ export class ItemClassComponent implements AfterContentChecked {
     this.itemTableS = student;
   }
 
-  saveMark(mark, student, lesson) {
+  saveMark(mark, studentId, lessonId) {
      this.clickByTable('','');
-    // this.marksForClassService.markSave(mark, student, lesson, this.subject);
+     this.marksForClassService.markSave(mark, studentId, lessonId, this.subject.getId());
   }
   clickByAddstydent() {
     this.addStudent = !this.addStudent;

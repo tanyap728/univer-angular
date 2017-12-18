@@ -12,8 +12,6 @@ import {Lesson} from '../models/lesson';
   templateUrl: 'add.lesson.html',
 })
 export class AddLesson {
-
-  theme: string;
   dateLesson: Date;
   subject: Subject;
   classCurrent: Class;
@@ -32,7 +30,7 @@ export class AddLesson {
     console.log(new Date(date.value));
     this.dateLesson = new Date(date.value);
   }
-  addLesson(topic: string) {// classCurrent: Class,  topic: string, subject: Subject, dateCurrent: Date
+  addLesson(topic: string) {
     this.lessonServise.addLessonByClass(this.classCurrent, topic, this.subject, new Date());
     this.onNoClick();
   }

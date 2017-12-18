@@ -20,11 +20,18 @@ th, td
   border-collapse: separate;
 
 }
-/*.mark{*/
-  /*padding: 3%;*/
-  /*min-width:10px;*/
-  /*min-height:10px;*/
-/*}*/
+.mark{
+  padding: 3%;
+  min-width:10px;
+  min-height:10px;
+}
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
 /*.warnAddSubjet {*/
   /*margin-left: 40%;*/
   /*text-align: center;*/
