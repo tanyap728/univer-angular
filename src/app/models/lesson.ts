@@ -4,7 +4,7 @@ import {UUID} from "angular2-uuid";
 
 export class Lesson {
 
-  constructor(private id: UUID,
+  constructor(private id: string,
               private topic: string,
               private subject: Subject,
               private dateLesson: Date,

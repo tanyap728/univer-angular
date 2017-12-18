@@ -11,20 +11,13 @@ import {UUID} from 'angular2-uuid';
   templateUrl: 'subject.panel.component.html',
   styleUrls: ['subject.panel.component.css']
 })
-export class SubjectPanelComponent implements OnChanges {
+export class SubjectPanelComponent  {
   @Input() currentClass: Class;
   @Output()selectSubject: EventEmitter<Subject> = new EventEmitter<Subject>();
   public openPanelSubject: boolean = true;
   public currentSubject: Subject;
 
-  ngOnChanges() {
-   // if ( this.currentClass.getSubjects().length) {
-   //   this.currentSubject = this.currentClass.getSubjects()[0];
-   //   this.selectSubject.emit(this.currentClass.getSubjects()[0]);
-   // } else {
-   //   this.currentSubject = null;
-   // }
-  }
+
 
   clickOpenPanelSubject(): void {
     this.openPanelSubject = !this.openPanelSubject;
