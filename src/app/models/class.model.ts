@@ -3,10 +3,10 @@ import {Student} from "./student.model";
 import {Subject} from "./subject.model";
 
 export class Class {
+  private _students: Student[];
+  private _subjects: Subject[]
   constructor(private id: UUID,
-              private name: string,
-              private _students: Student[],
-              private _subjects: Subject[]) {
+              private name: string) {
     this._students = [];
     this._subjects = [];
   }

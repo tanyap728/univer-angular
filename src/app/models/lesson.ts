@@ -1,17 +1,25 @@
+import {Subject} from "./subject.model";
+import {Class} from "./class.model";
+import {UUID} from "angular2-uuid";
+
 export class Lesson {
 
-  constructor(private tiket: number,
-              private theme: string,
-              private subject: string,
+  constructor(private id: UUID,
+              private ticket: number,
+              private topic: string,
+              private subject: Subject,
               private dateLesson: Date) {
   }
+  getId(){
+    return this.id;
+  }
   getTicket(): number {
-    return this.tiket;
+    return this.ticket;
   }
-  getTheme(): string {
-   return this.theme;
+  getTopic(): string {
+   return this.topic;
   }
-  getSubject(): string {
+  getSubject(): Subject {
     return this.subject;
   }
   getDateLesson(): Date {

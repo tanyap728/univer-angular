@@ -20,6 +20,7 @@ export class ItemClassComponent implements OnInit {
   @Input() classCurrent: Class;
   @Input() subject: Subject;
 
+  students : string[];
   lessons = [];
   constructor(private itemClassesService: ItemClassesService,
               private lessonServise: LessonServise,
