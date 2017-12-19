@@ -1,55 +1,44 @@
-<div class="header-subject">
-  <mat-toolbar color="secondary" class="panel">
-      <span>
-      <mat-card-title class="example-space" *ngIf="!currentClass.getSubjects().length">Please, add subject </mat-card-title>
-      <mat-card-title class="example-space" *ngIf="currentSubject">
-        <span class="example-spacer"><b>Class:</b>   {{currentClass.getName()}}</span>
-        <span class="example-icon"><b>Subject:</b>  {{currentSubject.getName()}}</span>
+<mat-toolbar class="header-subject" color="secondary">
+
+    <span class="example-space">
+      <mat-card-title *ngIf="!currentClass.getSubjects().length">Please, add subject </mat-card-title>
+      <mat-card-title *ngIf="currentSubject">
+        <span><b>Class:</b>   {{currentClass.getName()}}</span>
+        <span><b>Subject:</b>  {{currentSubject.getName()}}</span>
       </mat-card-title>
     </span>
 
-    <span>
-     <button class="example-spacer, subject-add"  mat-icon-button color="primary"
-                              (click)="clickOpenPanelSubject()"
-                              *ngIf="openPanelSubject">
-      <mat-icon [fontIcon]="50">add</mat-icon>
-    </button>
-   </span>
-      <span class="subject-add" *ngIf="!openPanelSubject">
-      <span><form class="example-space" ngNoForm>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Subject name" #subject autofocus>
-        </mat-form-field>
-      </form></span>
-      <span><button class="example-icon"
-                    mat-button
-                    (click)="addSubjectByClass(subject.value)">
-              <mat-icon aria-label="Example icon-button with a heart icon">done</mat-icon>
-      </button></span>
-      <span>
-        <button class="example-icon"
-                    mat-button
-                    (click)="clickOpenPanelSubject()">
-        <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
-      </button>
-      </span>
+  <span>
+  <button mat-button [matMenuTriggerFor]="menu"
+          class="subject-add-panel"
+          color="primary"
+          *ngIf="currentClass.getSubjects().length && openPanelSubject"
+  ><b>Subject</b></button>
 
-    </span>
-    <span>
-      <button mat-button [matMenuTriggerFor]="menu"
-              class="dropDownSubject"
-              color="primary"
-              *ngIf="currentClass.getSubjects().length"
-      ><b>Subject</b></button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngFor="let subject of currentClass.getSubjects()"
-                (click)="setSubject(subject)">{{subject.getName()}}
-        </button>
-      </mat-menu>
-    </span>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let subject of currentClass.getSubjects()"
+            (click)="setSubject(subject)">{{subject.getName()}}
+    </button>
+  </mat-menu>
+
+  <mat-toolbar class="subject-add-panel" *ngIf="!openPanelSubject">
+
+    <input  class="example-space-input" placeholder="subject name" #subject autofocus>
+
+
+
+    <mat-icon class="example-icon"
+              mat-button (click)="addSubjectByClass(subject.value)">done</mat-icon>
+    <mat-icon class="example-icon"
+              mat-button (click)="clickOpenPanelSubject()">clear</mat-icon>
   </mat-toolbar>
 
 
 
-
-</div>
+  <button class="subject-add" mat-icon-button color="primary"
+          (click)="clickOpenPanelSubject()"
+          *ngIf="openPanelSubject">
+    <mat-icon [fontIcon]="50">add</mat-icon>
+  </button>
+</span>
+</mat-toolbar>

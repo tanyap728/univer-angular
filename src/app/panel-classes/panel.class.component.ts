@@ -32,11 +32,9 @@ export class PanelClassComponent implements AfterContentChecked {
     this.itemClick = itemClass;
   }
   getClassClick(): Class {
-    console.log(this.itemClick ? this.itemClick : this.classes[0]);
     return this.itemClick ? this.itemClick : this.classes[0];
   }
   getSubject() {
-    console.log(this.subject);
     return this.subject;
   }
   openPanelClass() {
@@ -56,7 +54,5 @@ export class PanelClassComponent implements AfterContentChecked {
         subject: this.subject
       }
     });
-    // dialogRef.afterClosed().subscribe(result => {
-    // });
   }
 }

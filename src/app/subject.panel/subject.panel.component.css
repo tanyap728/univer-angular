@@ -6,19 +6,30 @@
   margin-left: 10%;
   flex: 1 1 auto;
 }
+.example-space-input{
+  border-top: hidden;
+  border-left: hidden;
+  flex: 1 1 auto;
+}
+.example-space-input:focus{
+  outline: none;
+}
 .header-subject{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
 .dropDownSubject{
-  position: absolute;
   right: 1%;
   display: flex;
   flex-direction: row;
 }
 .subject-add {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  right: 10%;
+  left: 0;
+}
+.subject-add-panel {
+  width: 30%;
+  left: 0;
 }
 

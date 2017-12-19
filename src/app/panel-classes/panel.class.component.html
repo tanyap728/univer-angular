@@ -33,7 +33,7 @@
                     [subject]="getSubject()">
 
     </app-item-class>
-    <button mat-fab color="primary"
+    <button *ngIf="getClassClick() && getSubject()" mat-fab color="primary"
             (click)="openPopUp()"
             class="buttonLesson"
     >
